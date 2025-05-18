@@ -1,0 +1,98 @@
+<div class="login-main">
+    <div class="card">
+        <div class="card-header">Current
+        </div>
+        <div class="card-body">
+
+            <h5 class="card-title currentBalance">Balance: {{currentBalance}}</h5>
+            <div class="action-btns">
+                <button type="button" (click)="currentDepositCollapse()" class="btn btn-primary">Deposit</button>
+                <button type="button" (click)="currentWithdrawCollapse()" class="btn btn-primary">Withdraw</button>
+            </div>
+            <div class="collapse" #currentDepositCollapseC id="collapseDepositCurrent">
+                <div class="card card-body">
+                    <form class="example-form" [formGroup]="currentForm" (ngSubmit)="depositCurrentBalance()">
+                        <mat-form-field class="example-full-width">
+                            <input matInput formControlName="currentFormControl" placeholder="$$$" required>
+                            @if (currentForm.get('currentFormControl')?.hasError('required')) {
+                            <mat-error>Amount is <strong>required</strong></mat-error>
+                            }
+                        </mat-form-field>
+                        <button mat-flat-button class="btn btn-primary" color="primary" type="submit"
+                            [disabled]="currentForm.invalid" data-bs-toggle="collapse"
+                            data-bs-target="#collapseDepositCurrent">
+                            Confirm
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="collapse" #currentWithdrawCollapseC id="collapseWithdrawCurrent">
+                <div class="card card-body">
+                    <form class="example-form" [formGroup]="currentForm" (ngSubmit)="withdrawCurrentBalance()">
+                        <mat-form-field class="example-full-width">
+                            <input matInput formControlName="currentFormControl" placeholder="$$$" required>
+                            @if (currentForm.get('currentFormControl')?.hasError('required')) {
+                            <mat-error>Amount is <strong>required</strong></mat-error>
+                            }
+                        </mat-form-field>
+                        <button mat-flat-button class="btn btn-primary" color="primary" type="submit"
+                            [disabled]="currentForm.invalid" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWithdrawCurrent">
+                            Confirm
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">Saving
+        </div>
+        <div class="card-body">
+
+            <h5 class="card-title savingBalance">Balance: {{savingBalance}}</h5>
+            <div class="action-btns">
+                <button type="button" (click)="savingDepositCollapse()" class="btn btn-primary">Deposit</button>
+                <button type="button" (click)="savingWithdrawCollapse()" class="btn btn-primary">Withdraw</button>
+            </div>
+            <div class="collapse" #savingDepositCollapseC id="collapseDepositSaving">
+                <div class="card card-body">
+                    <form class="example-form" [formGroup]="savingForm" (ngSubmit)="depositSavingBalance()">
+                        <mat-form-field class="example-full-width">
+                            <input matInput formControlName="savingFormControl" placeholder="$$$" required>
+                            @if (savingForm.get('savingFormControl')?.hasError('required')) {
+                            <mat-error>Amount is <strong>required</strong></mat-error>
+                            }
+                        </mat-form-field>
+                        <button mat-flat-button class="btn btn-primary" color="primary" type="submit"
+                            [disabled]="savingForm.invalid" data-bs-toggle="collapse"
+                            data-bs-target="#collapseDepositSaving">
+                            Confirm
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="collapse" #savingWithdrawCollapseC id="collapseWithdrawSaving">
+                <div class="card card-body">
+                    <form class="example-form" [formGroup]="savingForm" (ngSubmit)="withdrawSavingBalance()">
+                        <mat-form-field class="example-full-width">
+                            <input matInput formControlName="savingFormControl" placeholder="$$$" required>
+                            @if (savingForm.get('savingFormControl')?.hasError('required')) {
+                            <mat-error>Amount is <strong>required</strong></mat-error>
+                            }
+                        </mat-form-field>
+                        <button mat-flat-button class="btn btn-primary" color="primary" type="submit"
+                            [disabled]="savingForm.invalid" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWithdrawSaving">
+                            Confirm
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

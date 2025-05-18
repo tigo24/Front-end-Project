@@ -1,0 +1,121 @@
+.clients-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  padding-top: 3.5rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.add-client-btn {
+  align-self: flex-start;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  background-color: #3f51b5;
+  color: white;
+  max-width: 200px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.add-client-btn:hover {
+  background-color: #303f9f;
+}
+
+.client-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(63, 81, 181, 0.15);
+  background: white;
+}
+
+.client-table thead {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.client-table th,
+.client-table td {
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  font-size: 1rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.client-table tbody tr {
+  border-bottom: 1px solid #e6e6e6;
+  transition: background-color 0.3s ease;
+}
+
+.client-table tbody tr:hover {
+  background-color: #eef3fc;
+}
+
+.actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+}
+
+.actions-cell button {
+  margin: 0;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  min-width: 70px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions-cell button:last-child {
+  margin-right: 0;
+}
+
+.client-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.client-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .clients-title {
+    font-size: 2rem;
+  }
+
+  .client-table th,
+  .client-table td {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .actions-cell button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    min-width: 60px;
+    height: 32px;
+  }
+}
+
+.table-balance {
+  font-weight: 600;
+  font-size: 125% !important;
+}
+
+.table-action {
+  text-align: center !important;
+}

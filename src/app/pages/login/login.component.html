@@ -1,0 +1,52 @@
+<div class="login-wrapper">
+    <div class="container">
+        <div class="greeting-section">
+            <h1>Welcome To My BankApp Project</h1>
+            <p>This is a Project created by Me for my Course's Front-end Final Project, I hope you like it</p>
+        </div>
+        <div class="container login-main">
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                    aria-expanded="false" aria-controls="collapseExample" (click)="toggleLoginCollapse()"
+                    [attr.aria-expanded]="isLoginOpen">
+                    {{ isLoginOpen ? 'Login' : 'Press Me' }}
+                </div>
+                <div class="card-body collapse" id="collapseExample">
+                    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div>
+                            <mat-form-field class="example-full-width login-form">
+                                <mat-label>Username</mat-label>
+                                <input type="text" matInput formControlName="userFormControl"
+                                    placeholder="Ex. Username">
+                                <mat-hint align="start">psst... Username is <strong>admin</strong></mat-hint>
+                                @if (loginForm.get('userFormControl')?.hasError('minLength') &&
+                                !loginForm.get('userFormControl')?.hasError('required')) {
+                                <mat-error>Please enter a valid Username</mat-error>
+                                }
+                                @if (loginForm.get('userFormControl')?.hasError('required')) {
+                                <mat-error>Username is <strong>required</strong></mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field class="example-full-width login-form">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput formControlName="passFormControl"
+                                    placeholder="Ex. Password">
+                                <mat-hint align="start">Password is <strong>admin</strong> too.</mat-hint>
+                                @if (loginForm.get('passFormControl')?.hasError('minLength') &&
+                                !loginForm.get('passFormControl')?.hasError('required')) {
+                                <mat-error>Please enter a valid Password</mat-error>
+                                }
+                                @if (loginForm.get('passFormControl')?.hasError('required')) {
+                                <mat-error>Password is <strong>required</strong></mat-error>
+                                }
+                            </mat-form-field>
+                        </div>
+                        <div><button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

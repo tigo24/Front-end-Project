@@ -1,0 +1,102 @@
+{
+  "clients": [
+    {
+      "name": "John Doe",
+      "phone": "01234567890",
+      "nationalId": "12345678912345",
+      "accounts": {
+        "current": {
+          "balance": 3000
+        },
+        "saving": {
+          "balance": 3000
+        }
+      },
+      "id": "6be"
+    },
+    {
+      "name": "Mohamed Ashraf",
+      "phone": "01100703341",
+      "nationalId": "22222222222222",
+      "accounts": {
+        "current": {
+          "balance": 1500
+        },
+        "saving": {
+          "balance": 1500
+        }
+      },
+      "id": "86e2"
+    },
+    {
+      "name": "Nayer",
+      "phone": "01234567891",
+      "nationalId": "12312312312312",
+      "accounts": {
+        "current": {
+          "balance": 500
+        },
+        "saving": {
+          "balance": 35000
+        }
+      },
+      "id": "18fb"
+    },
+    {
+      "name": "mohamed",
+      "phone": "12312312345",
+      "nationalId": "12312312312345",
+      "accounts": {
+        "current": {
+          "balance": 500
+        },
+        "saving": {
+          "balance": 4500
+        }
+      },
+      "id": "7ec1"
+    },
+    {
+      "name": "ahmed",
+      "phone": "12312312312",
+      "nationalId": "12312312312311",
+      "accounts": {
+        "current": {
+          "balance": 6500
+        },
+        "saving": {
+          "balance": 6500
+        }
+      },
+      "id": "4b3e"
+    },
+    {
+      "id": "fbde",
+      "name": "hoda",
+      "phone": "01234567891",
+      "nationalId": "01234567891234",
+      "accounts": {
+        "current": {
+          "balance": 11500
+        },
+        "saving": {
+          "balance": 52000
+        }
+      }
+    },
+    {
+      "id": "5288",
+      "name": "mohamed",
+      "phone": "11111111111",
+      "nationalId": "33333333333333",
+      "accounts": {
+        "current": {
+          "balance": 500
+        },
+        "saving": {
+          "balance": 6000
+        }
+      }
+    }
+  ]
+}

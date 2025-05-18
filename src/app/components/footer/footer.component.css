@@ -1,0 +1,9 @@
+.creator-credit {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 3rem; /* same as greeting-section padding */
+  font-size: 0.9rem;
+  color: #6b7280; /* a subtle gray */
+  opacity: 0.7;
+  font-style: italic;
+}

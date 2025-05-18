@@ -1,0 +1,48 @@
+<div class="container login-main">
+    <div class="card">
+        <div class="card-body">
+            <form class="example-form" [formGroup]="clientFormGroup" (ngSubmit)="onCreateOrUpdateClient()">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Client Name</mat-label>
+                    <input matInput formControlName="clientNameFormControl" placeholder="Ex. Client Name" required>
+                    @if (clientFormGroup.get('clientNameFormControl')?.hasError('required')) {
+                    <mat-error>Client Name is <strong>required</strong></mat-error>
+                    }
+                    @else if (clientFormGroup.get('clientNameFormControl')?.hasError('minlength')) {
+                    <mat-error>Minimum 3 characters required</mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phoneFormControl" placeholder="Ex. 0123456789" required>
+                    @if (clientFormGroup.get('phoneFormControl')?.hasError('required')) {
+                    <mat-error>Phone Number is <strong>required</strong></mat-error>
+                    }
+                    @else if (clientFormGroup.get('phoneFormControl')?.hasError('minlength')) {
+                    <mat-error>Minimum 11 characters required</mat-error>
+                    }
+                    @else if ( clientFormGroup.get('phoneFormControl')?.hasError('maxlength') ) {
+                    <mat-error>Maximum 11 characters required</mat-error> }
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>National ID</mat-label>
+                    <input matInput formControlName="nIdFormControl" placeholder="Ex. national ID" required>
+                    @if (clientFormGroup.get('nIdFormControl')?.hasError('required')) {
+                    <mat-error>National ID is <strong>required</strong></mat-error>
+                    }
+                    @else if (clientFormGroup.get('nIdFormControl')?.hasError('minlength')) {
+                    <mat-error>Minimum 14 characters required</mat-error>
+                    }
+                    @else if (clientFormGroup.get('nIdFormControl')?.hasError('maxlength')) {
+                    <mat-error>Maximum 14 characters required</mat-error> }
+                </mat-form-field>
+                <div>
+                    <button mat-flat-button class="btn btn-primary" color="primary" type="submit"
+                        [disabled]="clientFormGroup.invalid" data-bs-dismiss="modal">
+                        {{formBtn}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
